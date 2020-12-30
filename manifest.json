@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "iCampus Premium",
+    "version": "0.0.1",
+    "description": "강의 재생 전 인트로 영상 스킵, 강의 영상 다운로드 기능 제공",
+    "permissions": ["declarativeContent", "storage"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon24.png",
+        "128": "images/icon32.png"
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "https://canvas.skku.edu/*"
+          ],
+          "js": ["content.js"]
+        }
+    ],
+    "page_action": {
+        "default_icon": {
+          "16": "images/icon16.png",
+          "24": "images/icon24.png",
+          "32": "images/icon32.png" 
+        },
+        "default_title": "iCampus Premium",
+        "default_popup": "popup.html"
+    }
+}
