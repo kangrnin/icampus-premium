@@ -16,9 +16,10 @@
     "content_scripts": [
         {
           "matches": [
-            "https://canvas.skku.edu/*"
+            "https://lcms.skku.edu/em*"
           ],
-          "js": ["content.js"]
+          "js": ["jquery-3.5.1.min.js","content.js"],
+          "all_frames": true
         }
     ],
     "page_action": {
