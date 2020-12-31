@@ -6,15 +6,12 @@ function sleep(ms) {
 
 function getWhenExists(selector) {
     return new Promise(resolve => {
-        const checkExists = setInterval(() => {
-            if($(selector).length) {
-                clearInterval(checkExists);
-                resolve($(selector)[0]);
-            }
-        }, 100);
+        while(!$(selector).length)
+            sleep(100);
+        
+        resolve($(selector)[0]);
     });
 }
-
 
 $(async () => {
     const observer = new MutationObserver((mutations) => {
