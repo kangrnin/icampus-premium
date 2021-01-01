@@ -4,10 +4,10 @@ function sleep(ms) {
     });
 }
 
-function getWhenExists(selector) {
+async function getWhenExists(selector) {
     return new Promise(resolve => {
         while(!$(selector).length)
-            sleep(100);
+            await sleep(100);
         
         resolve($(selector)[0]);
     });
@@ -26,4 +26,14 @@ $(async () => {
     const video = await getWhenExists('video.vc-vplay-video1');
     const config = { attributes: true };
     observer.observe(video, config);
-})
+});
+
+// chrome.runtime.onMessage.addListener(
+//     function(request, sender, sendResponse) {
+//       console.log(sender.tab ?
+//                   "from a content script:" + sender.tab.url :
+//                   "from the extension");
+//       if (request.greeting == "hello")
+//         sendResponse({farewell: "goodbye"});
+//     }
+// );

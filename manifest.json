@@ -9,9 +9,11 @@
       "persistent": false
     },
     "icons": {
-        "16": "images/icon16.png",
-        "48": "images/icon24.png",
-        "128": "images/icon32.png"
+        "12": "images/icon12x12.png",
+        "24": "images/icon24x24.png",
+        "32": "images/icon32x32.png",
+        "64": "images/icon64x64.png",
+        "128": "images/icon128x128.png"
     },
     "content_scripts": [
         {
@@ -24,9 +26,9 @@
     ],
     "page_action": {
         "default_icon": {
-          "16": "images/icon16.png",
-          "24": "images/icon24.png",
-          "32": "images/icon32.png" 
+          "12": "images/icon12x12.png",
+          "24": "images/icon24x24.png",
+          "32": "images/icon32x32.png" 
         },
         "default_title": "iCampus Premium",
         "default_popup": "popup.html"
