@@ -4,36 +4,23 @@ function sleep(ms) {
     });
 }
 
-async function getWhenExists(selector) {
-    return new Promise(resolve => {
+function getWhenExists(selector) {
+    return new Promise(async resolve => {
         while(!$(selector).length)
             await sleep(100);
-        
         resolve($(selector)[0]);
     });
 }
 
 $(async () => {
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (mutation.type == 'attributes' ||
-                $(video).attr('src').includes('/settings/viewer/uniplayer/')) {
-                video.currentTime = video.duration;
-            }
-        });
-    });
-
     const video = await getWhenExists('video.vc-vplay-video1');
-    const config = { attributes: true };
-    observer.observe(video, config);
+    $(video).on('loadedmetadata', async e => { 
+        if(e.target.src.includes('/settings/viewer/uniplayer/intro')) {
+            console.log(e.target.currentTime);
+            console.log(e.target.duration);
+            await sleep(100);
+            e.target.currentTime = e.target.duration;
+            console.log(e.target.currentTime);
+        }
+    })
 });
-
-// chrome.runtime.onMessage.addListener(
-//     function(request, sender, sendResponse) {
-//       console.log(sender.tab ?
-//                   "from a content script:" + sender.tab.url :
-//                   "from the extension");
-//       if (request.greeting == "hello")
-//         sendResponse({farewell: "goodbye"});
-//     }
-// );
