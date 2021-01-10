@@ -16,11 +16,8 @@ $(async () => {
     const video = await getWhenExists('video.vc-vplay-video1');
     $(video).on('loadedmetadata', async e => { 
         if(e.target.src.includes('/settings/viewer/uniplayer/intro')) {
-            console.log(e.target.currentTime);
-            console.log(e.target.duration);
             await sleep(100);
             e.target.currentTime = e.target.duration;
-            console.log(e.target.currentTime);
         }
     })
 });
