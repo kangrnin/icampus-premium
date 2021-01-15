@@ -1,4 +1,7 @@
-![alt text](./images/icon128x128.png)
+<img src="images/thumbnail.png" alt="logo" width="800">
+
+<br>
+
 # iCampus Premium
 아이캠퍼스를 6초 인트로 없이 더욱 쾌적하게 즐기세요.
 
@@ -13,6 +16,3 @@
 ## Contributors
 * 서강민 [@kangrnin](https://github.com/kangrnin)
 * 김정원 [@threedalpeng](https://github.com/threedalpeng)
-  
-<br>
-S
