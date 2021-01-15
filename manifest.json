@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "iCampus Premium",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "강의 재생 전 인트로 영상 스킵",
     "permissions": ["declarativeContent"],
     "background": {
@@ -18,7 +18,8 @@
     "content_scripts": [
         {
           "matches": [
-            "https://lcms.skku.edu/em/*content_type%3Dmovie*"
+            "https://lcms.skku.edu/em/*content_type%3Dmovie*",
+            "https://lcms.skku.edu/em/*content_type%3Deverlec*"
           ],
           "js": ["jquery-3.5.1.min.js","content.js"],
           "all_frames": true
