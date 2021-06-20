@@ -1,0 +1,27 @@
+{
+  "name": "icampus-premium",
+  "version": "0.0.4",
+  "description": "iCampus Premuim",
+  "main": "manifest.json",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kangrnin/icampus-premium.git"
+  },
+  "author": {
+    "name": "Kangmin Seo",
+    "email": "kangrnin@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kangrnin/icampus-premium/issues"
+  },
+  "homepage": "https://github.com/kangrnin/icampus-premium",
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
+}
