@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "iCampus Premium",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "강의 재생 전 인트로 영상 스킵",
     "permissions": ["declarativeContent"],
     "background": {
