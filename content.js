@@ -44,10 +44,20 @@ $(async () => {
   speedButton.onclick = (e) => {
     speedInput.value = speedButton.innerHTML.slice(2)
   }
-  speedInput.oninput = (e) => {
+  speedInput.oninput = async (e) => {
     const speed = e.target.value
     speedButton.innerHTML = `x ${speed}`
-    video.playbackRate = speed
+
+    const scriptText = `
+    function() {
+      uniPlayer.setPlaybackRate(${speed})
+      contentPlayer.changePlaybackRate(${speed})
+    }
+    `
+    var script = document.createElement('script');
+    script.appendChild(document.createTextNode('('+scriptText+')();'))
+    (document.body || document.head || document.documentElement).appendChild(script)
+    script.remove()
   }
 
   speedSetBox.appendChild(speedInput)
