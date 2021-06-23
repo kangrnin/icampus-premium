@@ -54,10 +54,13 @@ $(async () => {
       contentPlayer.changePlaybackRate(${speed})
     }
     `
-    var script = document.createElement('script');
-    script.appendChild(document.createTextNode('('+scriptText+')();'));
-    (document.body || document.head || document.documentElement).appendChild(script);
-    script.remove();
+    const script = document.createElement('script')
+    script.appendChild(document.createTextNode('(' + scriptText + ')();'))
+
+    const scriptParent = document.body || document.head || document.documentElement
+    scriptParent.appendChild(script)
+
+    script.remove()
   }
 
   speedSetBox.appendChild(speedInput)
