@@ -1,4 +1,4 @@
-<img src="images/thumbnail.png" alt="logo" width="800">
+<img src="images/thumbnail.png" alt="logo" width="600">
 
 <br>
 
@@ -14,6 +14,7 @@
 * 2021.06.20. 강의 재생속도 조절 기능 개선
 * 2021.06.22. 강의 재생속도가 저장되지 않고 초기화되던 버그 수정
 * 2021.06.23. 일부 강의 인트로 스킵 미적용 문제 해결
+* 2021.11.15. 동영상만 보기 기능 추가
 
 <br>
 
