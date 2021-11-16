@@ -1,12 +1,13 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "iCampus Premium",
-  "version": "0.0.6",
-  "description": "강의 재생 전 인트로 영상 스킵",
-  "permissions": ["declarativeContent"],
+  "version": "0.0.7",
+  "description": "아이캠퍼스를 더 편리하게 만들어 주는 확장프로그램",
+  "permissions": [
+    "declarativeContent"
+  ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "icons": {
     "16": "images/icon16x16.png",
@@ -26,7 +27,7 @@
       "all_frames": true
     }
   ],
-  "page_action": {
+  "action": {
     "default_icon": {
       "16": "images/icon16x16.png",
       "24": "images/icon24x24.png",
@@ -34,5 +35,13 @@
     },
     "default_title": "iCampus Premium",
     "default_popup": "popup.html"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "images/rectangle.svg" ],
+      "matches": [ 
+        "https://lcms.skku.edu/*"
+      ]
+    }
+  ]
 }
