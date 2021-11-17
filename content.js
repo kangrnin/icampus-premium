@@ -22,47 +22,10 @@ $(async () => {
   })
 
   // speed input slider
-  const speedSetBox = await getWhenExists('div.vc-pctrl-playback-rate-setbox')
-  speedSetBox.innerHTML = ''
-  speedSetBox.style.cssText = `
-    width: 200px;
-    height: 22px;
-    border: 0px;
-    background: transparent;
-    position: absolute;
-    top: 12px;
-    padding-right: 64px;
-  `
-
-  const speedButton = await getWhenExists('div.vc-pctrl-playback-rate-toggle-btn')
-  const speedInput = document.createElement('input')
-  speedInput.type = 'range'
-  speedInput.value = '1.0'
-  speedInput.min = '0.1'
-  speedInput.max = '2.0'
-  speedInput.step = '0.1'
-  speedButton.onclick = (e) => {
-    speedInput.value = speedButton.innerHTML.slice(2)
-  }
-  speedInput.oninput = async (e) => {
-    const speed = e.target.value
-    speedButton.innerHTML = `x ${speed}`
-
-    const scriptText = `
-    function() {
-      uniPlayer.setPlaybackRate(${speed})
-      contentPlayer.changePlaybackRate(${speed})
-    }
-    `
-    const script = document.createElement('script')
-    script.appendChild(document.createTextNode('(' + scriptText + ')();'))
-
-    const scriptParent = document.body || document.head || document.documentElement
-    scriptParent.appendChild(script)
-
-    script.remove()
-  }
-  speedSetBox.appendChild(speedInput)
+  const speedChangerScript = document.createElement('script')
+  speedChangerScript.src = chrome.runtime.getURL('speedchanger.js')
+  const scriptRoot = document.head || document.documentElement
+  scriptRoot.appendChild(speedChangerScript)
 
   // video only
   const menuBar = await getWhenExists('div.vc-pctrl-buttons-bar')
