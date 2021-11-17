@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "iCampus Premium",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "아이캠퍼스를 더 편리하게 만들어 주는 확장프로그램",
   "permissions": [
     "declarativeContent"
