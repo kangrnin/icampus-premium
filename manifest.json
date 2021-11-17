@@ -38,7 +38,10 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [ "images/rectangle.svg" ],
+      "resources": [
+        "speedchanger.js",
+        "images/rectangle.svg"
+      ],
       "matches": [ 
         "https://lcms.skku.edu/*"
       ]
