@@ -14,7 +14,7 @@ export default class AudioHandler {
 
   appendNode(node, options) {
     if (typeof node === "function") {
-      const newNode = new NodeCtor(this.audioCtx, options);
+      const newNode = new node(this.audioCtx, options);
       this.nodes.push(newNode);
     } else if (typeof node === "object") {
       this.nodes.push(node);
@@ -32,7 +32,7 @@ export default class AudioHandler {
 }
 
 /* 아주 간단한 오디오 핸들러
-const videoEl = document.createElement("video");
+const videoEl = document.createElement("video");kg
 AudioHandler.create()
   .mount(videoEl)
   .appendNode(GainNode, { gain: 2 })
