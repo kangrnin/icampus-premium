@@ -39,7 +39,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "speedchanger.js",
+        "premium-features.js",
         "images/rectangle.svg"
       ],
       "matches": [ 

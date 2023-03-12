@@ -1,4 +1,4 @@
-function addSpeedChanger() {
+function initFeatures() {
   const speedSetBox = document.getElementsByClassName('vc-pctrl-playback-rate-setbox')[0]
   speedSetBox.innerHTML = ''
   speedSetBox.style.cssText = `
@@ -31,7 +31,7 @@ function addSpeedChanger() {
 }
 
 if (document.readyState !== "loading") {
-  addSpeedChanger()
+  initFeatures()
 } else {
-  document.addEventListener("DOMContentLoaded", addSpeedChanger)
+  document.addEventListener("DOMContentLoaded", initFeatures)
 }

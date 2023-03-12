@@ -21,11 +21,11 @@ $(async () => {
     }
   })
 
-  // speed input slider
-  const speedChangerScript = document.createElement('script')
-  speedChangerScript.src = chrome.runtime.getURL('speedchanger.js')
+  // inject icampus premium features script
+  const featuresScript = document.createElement('script')
+  featuresScript.src = chrome.runtime.getURL('premium-features.js')
   const scriptRoot = document.head || document.documentElement
-  scriptRoot.appendChild(speedChangerScript)
+  scriptRoot.appendChild(featuresScript)
 
   // video only
   const menuBar = await getWhenExists('div.vc-pctrl-buttons-bar')
