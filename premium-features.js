@@ -30,7 +30,8 @@ function initFeatures() {
   speedSetBox.appendChild(speedInput)
 
   
-  const video = document.getElementsByClassName('vc-vplay-video1')[0]
+  const video = document.getElementById('video-player')
+  console.log(video)
   const playController = bcPlayController.getPlayController()
   let clickTimeout = null;
 
