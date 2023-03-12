@@ -48,6 +48,9 @@ function initFeatures() {
       clickTimeout = null
     }, 200)
   })
+
+  // change video skip time to 5 seconds
+  VCPlayControllerMedia.MOVING_TIME = 5
 }
 
 if (document.readyState !== "loading") {
