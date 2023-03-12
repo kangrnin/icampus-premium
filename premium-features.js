@@ -28,6 +28,26 @@ function initFeatures() {
     speedInput.value = speedButton.innerHTML.slice(2)
   }
   speedSetBox.appendChild(speedInput)
+
+  
+  const video = document.getElementsByClassName('vc-vplay-video1')[0]
+  const playController = bcPlayController.getPlayController()
+  let clickTimeout = null;
+
+  // youtube-style video control
+  video.addEventListener('click', e => {
+    if (clickTimeout) {
+      clearTimeout(clickTimeout)
+      clickTimeout = null
+      playController.toggleFullScreenManually()
+      return
+    }
+    
+    clickTimeout = setTimeout(() => {
+      playController.togglePlayPauseManually()
+      clickTimeout = null
+    }, 200)
+  })
 }
 
 if (document.readyState !== "loading") {
