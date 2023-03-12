@@ -1,4 +1,4 @@
-function addSpeedChanger() {
+function initFeatures() {
   const speedSetBox = document.getElementsByClassName('vc-pctrl-playback-rate-setbox')[0]
   speedSetBox.innerHTML = ''
   speedSetBox.style.cssText = `
@@ -28,10 +28,33 @@ function addSpeedChanger() {
     speedInput.value = speedButton.innerHTML.slice(2)
   }
   speedSetBox.appendChild(speedInput)
+
+  
+  const video = document.getElementsByClassName('vc-vplay-video1')[0]
+  const playController = bcPlayController.getPlayController()
+  let clickTimeout = null;
+
+  // youtube-style video control
+  video.addEventListener('click', e => {
+    if (clickTimeout) {
+      clearTimeout(clickTimeout)
+      clickTimeout = null
+      playController.toggleFullScreenManually()
+      return
+    }
+    
+    clickTimeout = setTimeout(() => {
+      playController.togglePlayPauseManually()
+      clickTimeout = null
+    }, 200)
+  })
+
+  // change video skip time to 5 seconds
+  VCPlayControllerMedia.MOVING_TIME = 5
 }
 
 if (document.readyState !== "loading") {
-  addSpeedChanger()
+  initFeatures()
 } else {
-  document.addEventListener("DOMContentLoaded", addSpeedChanger)
+  document.addEventListener("DOMContentLoaded", initFeatures)
 }
