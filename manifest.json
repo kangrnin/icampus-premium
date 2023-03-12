@@ -21,7 +21,9 @@
       "matches": [
         "https://lcms.skku.edu/em/*content_type%3Dmovie*",
         "https://lcms.skku.edu/em/*content_type%3Deverlec*",
-        "https://lcms.skku.edu/em/*content_type%3Doncast*"
+        "https://lcms.skku.edu/em/*content_type%3Doncast*",
+        "https://lcms.skku.edu/em/*content_type%3Dscreenlecture*",
+        "https://lcms.skku.edu/em/*content_type%3Dzoom*"
       ],
       "js": ["jquery-3.5.1.min.js","content.js"],
       "all_frames": true
